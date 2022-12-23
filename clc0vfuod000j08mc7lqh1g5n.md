@@ -27,7 +27,59 @@ Next, we need to publish the configuration file and assets by running the follow
 php artisan vendor:publish --provider "Darkaonline\L5Swagger\L5SwaggerServiceProvider"
 ```
 
-This will create a `config/l5-swagger.php` configuration file, as well as a `public/vendor/swagger-ui` directory containing the Swagger UI assets.
+This will create a `config/l5-swagger.php` configuration file, as well as a `public/vendor/swagger-ui` directory containing the **Swagger UI** assets.
+
+To define the structure and behavior of your API, you'll need to create a **Swagger OpenAPI** specification file in the `public/docs` directory. This file should be written in **YAML** or **JSON** and should define the API's endpoints, request and response bodies, and other details. Here's an example of a basic **Swagger OpenAPI** specification file for a Laravel API:
+
+```yaml
+openapi: 3.0.1
+info:
+  title: My Laravel API
+  version: 1.0.0
+servers:
+  - url: https://api.example.com/
+paths:
+  /users:
+    get:
+      summary: Get a list of users
+      operationId: getUsers
+      tags:
+        - users
+      parameters:
+        - name: limit
+          in: query
+          description: The maximum number of users to return
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          description: The unique identifier for the user
+        name:
+          type: string
+          description: The name of the user
+```
+
+In this example, the `openapi` and `info` blocks define the version of the **Swagger OpenAPI** specification and the API's metadata, respectively. The `servers` block defines the base URL for the API, and the `paths` block defines the API's endpoints and their behavior. The `components` block defines reusable schemas that can be referenced by the endpoints.
+
+You can then access the documentation by visiting the `/docs` route in your Laravel application. The **Swagger UI** will display the documentation and allow users to interact with the API by making requests and viewing the responses.
 
 ## **Defining API Endpoints**
 
@@ -142,7 +194,7 @@ With our API endpoints defined, we can now generate the documentation by running
 php artisan l5-swagger:generate
 ```
 
-This will generate a `public/docs/api-docs.json` file containing the Swagger OpenAPI specification for our API. We can then view the documentation by visiting the `/docs` route in our Laravel application. This will display the Swagger UI, which allows us to interactively explore the API and try out different requests.
+This will generate a `public/docs/api-docs.json` file containing the **Swagger OpenAPI** specification for our API. We can then view the documentation by visiting the `/docs` route in our Laravel application. This will display the **Swagger UI**, which allows us to interactively explore the API and try out different requests.
 
 ## **Testing the API**
 
@@ -188,4 +240,8 @@ In this example, we create a new instance of the `UsersApi` class and use it to 
 
 ## **Conclusion**
 
-In this post, we covered how to set up and use Swagger OpenAPI for generating documentation and testing a Laravel API. We saw how to define API endpoints using annotations, generate the documentation, and use the Swagger Codegen tool to generate a client library for testing the API. By following these steps, you can easily add documentation and testing to your Laravel API using Swagger OpenAPI.
+In this post, we covered how to set up and use **Swagger OpenAPI** for generating documentation and testing a Laravel API.
+
+We saw how to define API endpoints using annotations, generate the documentation, and use the **Swagger Codegen tool** to generate a client library for testing the API.
+
+By following these steps, you can easily add documentation and testing to your Laravel API using **Swagger OpenAPI**.
