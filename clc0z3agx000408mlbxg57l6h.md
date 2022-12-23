@@ -2,7 +2,7 @@
 
 A **CDN**, or **Content Delivery Network**, is a network of servers that are designed to deliver content, such as web pages, images, and videos, to users based on their geographic location. By using a **CDN**, you can offload static assets such as images, JavaScript and CSS files, and videos from your servers and reduce the load on your servers. This can help improve the performance and scalability of your Laravel application.
 
-Laravel provides built-in support for several **CDN** providers, including **Amazon S3** and **Cloudinary**. To use a **CDN** with your Laravel application, you'll need to create an account with a **CDN** provider and configure your application to use the **CDN**.
+Laravel provides built-in support for several **CDN** providers, including [**Amazon S3**](https://aws.amazon.com/s3/) and [**Cloudinary**](https://cloudinary.com/). To use a **CDN** with your Laravel application, you'll need to create an account with a **CDN** provider and configure your application to use the **CDN**.
 
 To configure your Laravel application to use a **CDN**, you'll need to update the `config/filesystems.php` configuration file. In the `disks` array, you'll need to add a new entry for your **CDN**. For example, here's how you might configure your Laravel application to use **Amazon S3** as a **CDN**:
 
@@ -56,3 +56,5 @@ A **CDN** can also help reduce the load on your servers by serving static assets
 Finally, using a **CDN** can also help reduce your hosting costs. By offloading static assets to a **CDN**, you can reduce the amount of storage and bandwidth needed on your servers, which can help lower your hosting costs.
 
 By considering these and other benefits, you can determine whether using a **CDN** is the right choice for your Laravel application. With the built-in support for **CDN** providers like **Amazon S3** and **Cloudinary**, it's easy to set up and use a **CDN** with your **Laravel** application to improve performance, security, scalability, and hosting costs.
+
+Enjoy coding!
