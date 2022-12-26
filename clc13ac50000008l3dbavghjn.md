@@ -80,7 +80,7 @@ Laravel provides a variety of caching options, including:
     
     * [**Redis**](https://redis.io/)
         
-    * [**Memcached**](https://memcached.org/).
+    * [**Memcached**](https://memcached.org/)
         
 
 Here's an example of how to use file-based caching in a Laravel API:
