@@ -88,13 +88,13 @@ Using a load balancer in **NGINX** can greatly improve the scalability and relia
 
 While setting up a load balancer in **NGINX** can improve the scalability and reliability of your Laravel API, it's important to carefully consider the resources and configuration needed to support your application's requirements. Some things to consider when using a load balancer with a Laravel API include:
 
-* Load balancing algorithm: **NGINX** supports a number of different algorithms for distributing requests to servers, including round-robin, least connections, and IP hash. Choose an algorithm that best meets the needs of your application and servers.
+* **Load balancing algorithm**: **NGINX** supports a number of different algorithms for distributing requests to servers, including round-robin, least connections, and IP hash. Choose an algorithm that best meets the needs of your application and servers.
     
-* Health checks: It's important to ensure that the servers and resources being used by the load balancer are healthy and able to handle requests. **NGINX**'s `health_check` directive allows you to specify a URL or script that the load balancer can use to check the health of a server. If a server fails a health check, it will be removed from the load balancer until it becomes healthy again.
+* **Health checks**: It's important to ensure that the servers and resources being used by the load balancer are healthy and able to handle requests. **NGINX**'s `health_check` directive allows you to specify a URL or script that the load balancer can use to check the health of a server. If a server fails a health check, it will be removed from the load balancer until it becomes healthy again.
     
-* Caching: **NGINX**'s load balancer can be configured to cache responses from servers to improve performance. This can be especially useful for API endpoints that return large amounts of data or are used frequently. Be sure to consider the size and duration of your cache when configuring caching for your load balancer.
+* **Caching**: **NGINX**'s load balancer can be configured to cache responses from servers to improve performance. This can be especially useful for API endpoints that return large amounts of data or are used frequently. Be sure to consider the size and duration of your cache when configuring caching for your load balancer.
     
-* SSL/TLS: If you're using SSL/TLS with your load balancer, be sure to keep your SSL/TLS certificates up to date and renew them before they expire. You should also consider using stronger ciphers and enabling HTTP/2 to improve the security and performance of your API.
+* **SSL/TLS**: If you're using SSL/TLS with your load balancer, be sure to keep your SSL/TLS certificates up to date and renew them before they expire. You should also consider using stronger ciphers and enabling HTTP/2 to improve the security and performance of your API.
     
 
 By carefully considering these and other factors, you can ensure that your load balancer is properly configured to support the needs of your Laravel API. It's also a good idea to regularly monitor the performance of your load balancer and servers to ensure that they are able to handle the load and respond to requests in a timely manner.
