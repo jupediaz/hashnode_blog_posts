@@ -1,6 +1,6 @@
 # Go Language: An Introduction to Google's Efficient, Concurrent Programming Language
 
-Go, also known as Golang, is a programming language developed by Google in 2009. It was created by Robert Griesemer, Rob Pike, and Ken Thompson, all of whom were influential figures in the software industry and had previously worked on other programming languages such as C, Unix, and Plan 9.
+[Go](https://go.dev/), also known as **Golang**, is a programming language developed by Google in 2009. It was created by Robert Griesemer, Rob Pike, and Ken Thompson, all of whom were influential figures in the software industry and had previously worked on other programming languages such as C, Unix, and Plan 9.
 
 Go was designed to address a number of challenges that Google was facing at the time, including the need for a language that could support large-scale, concurrent systems and the rapid growth of the internet. Go was intended to be simple, efficient, and scalable, with a focus on concurrency and simplicity.
 
